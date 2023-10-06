@@ -76,8 +76,8 @@ def eval_postfix(expr):
             operand1 = stack.pop()
             result = perform_operation(operand1, operand2, char)
             stack.push(result)
-        else:
-            raise SyntaxError("Invalid character: " + char)
+        else: pass
+            # raise SyntaxError("Invalid character: " + char)#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     # After processing all characters, the stack should contain the final result
     if stack.size() == 1:
@@ -117,9 +117,10 @@ def main():
             try:
                 # Convert infix to postfix
                 postfix_expr = in2post(expr)
+                
 
                 # Print the postfix expression
-                print("postfix:", postfix_expr)
+                print("postfix:", " ".join(postfix_expr)) #,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
                 # Evaluate the postfix expression
                 result = eval_postfix(postfix_expr)
